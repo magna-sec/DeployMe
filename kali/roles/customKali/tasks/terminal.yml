@@ -1,0 +1,26 @@
+---
+- name: Copy bashrc for {{ ansible_user }}
+  ansible.builtin.copy:
+    src: bashrc
+    dest: /home/{{ ansible_user }}/.bashrc
+    owner: "{{ ansible_user }}"
+    group: "{{ ansible_user }}"
+    mode: '0600'
+
+- name: Copy bashrc for root
+  ansible.builtin.copy:
+    src: bashrc
+    dest: /root/.bashrc
+    owner: root
+    group: root
+    mode: '0600'
+  become: true
+
+
+- name: Change terminal fontsize
+  lineinfile:
+    path: "{{ Terminal_Settings }}"
+    regexp: '^fontSize=10$'
+    line: 'fontSize=12'
+  become: true
+

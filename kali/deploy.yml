@@ -1,0 +1,4 @@
+---
+- hosts: kali
+  roles:
+    - customKali

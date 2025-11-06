@@ -1,0 +1,59 @@
+# Installations
+- include_tasks: checks.yml
+- include_tasks: installs.yml
+
+#- include_tasks: sliver.yml
+#  when: not sliver_exists
+
+# Fix terminal
+- include_tasks: terminal.yml
+
+# Wallpaper
+- include_tasks: wallpaper.yml
+
+# Folders
+- include_tasks: folders.yml
+
+# Lists
+############# Gits
+- include_tasks: git.yml
+  vars:
+    dir: "{{ Lists }}"
+  loop: "{{ ListsGit }}"
+
+# Tooling
+############# Gits
+- include_tasks: git.yml
+  vars:
+      dir: "{{ Tools_Windows }}"
+  loop: "{{ WindowsToolsGit }}"
+
+- include_tasks: git.yml
+  vars:
+      dir: "{{ Tools_Linux }}"
+  loop: "{{ LinuxToolsGit }}"
+
+############# Downloads
+- include_tasks: download.yml
+  vars:
+      dir: "{{ Tools_Windows }}"
+  loop: "{{ WindowsToolsDownloads }}"
+
+- include_tasks: download.yml
+  vars:
+      dir: "{{ Tools_Linux }}"
+  loop: "{{ LinuxToolsDownloads }}"
+
+############# Compressed
+- include_tasks: compressed.yml
+  vars:
+      dir: "{{ Tools_Windows }}"
+  loop: "{{ WindowsToolsCompressed }}"
+
+- include_tasks: docker_images.yml
+  loop: "{{ DockerImages }}"
+
+- include_tasks: snmp.yml
+- include_tasks: fix_metasploit.yml
+
+- include_tasks: cleanup.yml

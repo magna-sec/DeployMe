@@ -1,0 +1,126 @@
+---
+
+Tools: /home/{{ ansible_user }}/Tools/
+Tools_Windows: /home/{{ ansible_user }}/Tools/Windows
+Tools_Linux: /home/{{ ansible_user }}/Tools/Linux
+Tools_Generic: /home/{{ ansible_user }}/Tools/Generic
+
+Lists: /home/{{ ansible_user }}/Lists/
+
+Terminal_Settings: /etc/xdg/qterminal.org/qterminal.ini
+
+InitialPackages:
+- remmina
+- ltrace
+- tilix
+- strace
+- hexedit
+- php-cli
+- jq
+- npm
+- ntpsec-ntpdate
+- isc-dhcp-client
+- rdate
+- gobuster
+- freerdp3-dev
+- coercer
+- gdb
+- msitools
+- mssqlpwner
+- jd-gui
+- bloodhound
+- sliver
+- snmp-mibs-downloader
+- mono-devel
+- pipx
+- awscli
+- ligolo-ng
+- netexec
+- docker.io
+- bloodyad
+- tailscale
+
+PipInstalls:
+ - pyftpdlib
+ - ldeep
+ - dulwich
+ - updog
+ - uploadserver
+ - grip
+ - smbclientng
+ - bopscrk
+ - defaultcreds-cheat-sheet
+ - flask-unsign
+ - git+https://github.com/ShutdownRepo/pywhisker
+ - git+https://github.com/garrettfoster13/sccmhunter/
+ - dploot
+ - git+https://github.com/p0dalirius/smbclient-ng
+ - git+https://github.com/ly4k/Certipy
+
+DockerImages:
+ - postgres:13.2
+ - neo4j:4.4
+ - woahbase/alpine-python2
+
+ListsGit:
+- https://github.com/danielmiessler/SecLists
+- https://github.com/insidetrust/statistically-likely-usernames
+- https://github.com/ignis-sec/Pwdb-Public
+
+############# Gits
+LinuxToolsGit:
+- https://github.com/arthaud/git-dumper
+- https://github.com/internetwache/GitTools
+- https://github.com/nsonaniya2010/SubDomainizer
+
+WindowsToolsGit:
+- https://github.com/login-securite/DonPAPI
+- https://github.com/PowerShellMafia/PowerSploit
+- https://github.com/Kevin-Robertson/Powermad
+- https://github.com/S3cur3Th1sSh1t/PowerSharpPack
+- https://github.com/r3motecontrol/Ghostpack-CompiledBinaries
+- https://github.com/ParrotSec/mimikatz
+- https://github.com/dirkjanm/CVE-2020-1472
+- https://github.com/itm4n/PrivescCheck
+- https://github.com/BeichenDream/GodPotato
+- https://github.com/tylerdotrar/SigmaPotato
+- https://github.com/ShutdownRepo/targetedKerberoast
+- https://github.com/dirkjanm/PKINITtools
+- https://github.com/cddmp/enum4linux-ng
+- https://github.com/ghost-ng/slinger
+- https://github.com/Thunter-HackTeam/EvilentCoerce
+- https://github.com/SecuraBV/Timeroast
+- https://github.com/micahvandeusen/gMSADumper
+
+GenericToolsGit:
+- https://github.com/arthaud/git-dumper
+- https://github.com/unode/firefox_decrypt
+- https://github.com/musana/CF-Hero
+- https://github.com/iphelix/dnschef
+
+ListsGit:
+- https://github.com/danielmiessler/SecLists
+- https://github.com/insidetrust/statistically-likely-usernames
+
+
+############# Downloads
+LinuxToolsDownloads:
+- https://github.com/carlospolop/PEASS-ng/releases/latest/download/linpeas.sh
+- https://github.com/DominicBreuker/pspy/releases/download/v1.2.1/pspy32
+- https://github.com/DominicBreuker/pspy/releases/download/v1.2.1/pspy64
+
+WindowsToolsDownloads:
+- https://github.com/ropnop/kerbrute/releases/download/v1.0.3/kerbrute_linux_amd64
+- https://raw.githubusercontent.com/SpecterOps/bloodhound/main/examples/docker-compose/docker-compose.yml
+- https://download.sysinternals.com/files/SysinternalsSuite.zip
+- https://raw.githubusercontent.com/samratashok/nishang/master/Shells/Invoke-PowerShellTcp.ps1
+- https://github.com/itm4n/PrintSpoofer/releases/download/v1.0/PrintSpoofer32.exe
+- https://github.com/itm4n/PrintSpoofer/releases/download/v1.0/PrintSpoofer64.exe
+
+ListDownloads:
+- 
+
+
+############# Compressed
+WindowsToolsCompressed:
+- https://download.sysinternals.com/files/SysinternalsSuite.zip

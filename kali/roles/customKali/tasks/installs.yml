@@ -1,0 +1,39 @@
+---
+# https://docs.tutor.overhang.io/install.html
+- name: Remove apt lock-frontend file
+  file:
+    state: absent
+    path: "/var/lib/dpkg/lock-frontend"
+  become: true
+
+- name: Remove apt lock file
+  file:
+    state: absent
+    path: "/var/lib/dpkg/lock"
+  become: true
+
+- name: Update but don't upgrade packages
+  apt:
+    update_cache: true
+  become: true
+
+# Installing packages
+- name: Install apt packages
+  ansible.builtin.package:
+    name: "{{ item }}"
+    state: present
+  loop: "{{ InitialPackages }}"
+  become: true
+
+# Installing Pip packages
+- name: Install various python packages
+  community.general.pipx:
+    name: "{{ item }}"
+  with_items: "{{ PipInstalls }}"
+  become: true
+
+# Install pipx packages
+- name: Ensure directory where pipx stores apps is in your PATH environment variable.
+  shell: |
+    pipx ensurepath
+

@@ -1,0 +1,28 @@
+---
+- name: Clone Havoc repository
+  git:
+    repo: https://github.com/HavocFramework/Havoc.git
+    dest: /opt/Havoc
+
+#- name: Add deadsnakes PPA for Python
+#  apt_repository:
+#    repo: ppa:deadsnakes/ppa
+#    state: present
+
+# It was breaking with chdir
+
+#- name: Download golang.org/x/sys module
+#  command: bash -c "cd /opt/Havoc/teamserver && go mod download golang.org/x/sys"
+
+#- name: Download github.com/ugorji/go module
+#  command: bash -c "cd /opt/Havoc/teamserver && go mod download github.com/ugorji/go"
+
+- name: Build teamserver binary
+  make:
+    chdir: /opt/Havoc
+    target: ts-build
+
+- name: Build client binary
+  make:
+    chdir: /opt/Havoc
+    target: client-build

@@ -1,0 +1,5 @@
+---
+- name: Pulling {{ item }} Docker image
+  community.docker.docker_image:
+    name: "{{ item }}"
+    source: pull

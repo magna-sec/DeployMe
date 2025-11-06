@@ -1,0 +1,46 @@
+---
+
+### Tooling
+- name: Create a tools directory if it does not exist
+  ansible.builtin.file:
+    path: /home/{{ ansible_user }}/Tools
+    owner: "{{ ansible_user }}"
+    group: "{{ ansible_user }}"
+    state: directory
+    mode: '0755'
+
+## Windows
+- name: Create a Windows tools directory if it does not exist
+  ansible.builtin.file:
+    path: /home/{{ ansible_user }}/Tools/Windows
+    owner: "{{ ansible_user }}"
+    group: "{{ ansible_user }}"
+    state: directory
+    mode: '0755'
+
+## Linux
+- name: Create a Linux tools directory if it does not exist
+  ansible.builtin.file:
+    path: /home/{{ ansible_user }}/Tools/Linux
+    owner: "{{ ansible_user }}"
+    group: "{{ ansible_user }}"
+    state: directory
+    mode: '0755'
+
+## Generic
+- name: Create a Generic tools directory if it does not exist
+  ansible.builtin.file:
+    path: /home/{{ ansible_user }}/Tools/Generic
+    owner: "{{ ansible_user }}"
+    group: "{{ ansible_user }}"
+    state: directory
+    mode: '0755'
+
+### Lists
+- name: Create a lists directory if it does not exist
+  ansible.builtin.file:
+    path: /home/{{ ansible_user }}/Lists
+    owner: "{{ ansible_user }}"
+    group: "{{ ansible_user }}"
+    state: directory
+    mode: '0755'

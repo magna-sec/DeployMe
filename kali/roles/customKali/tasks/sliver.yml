@@ -1,0 +1,17 @@
+---
+- name: Download Sliver installer
+  get_url:
+    url: https://sliver.sh/install
+    dest: /tmp/script.sh
+    mode: '0755'
+
+- name: Running Sliver installer
+  shell: /tmp/script.sh
+  args:
+    removes: /tmp/script.sh
+  become: true
+
+- name: Delete Sliver installer
+  file:
+    path: /tmp/script.sh
+    state: absent

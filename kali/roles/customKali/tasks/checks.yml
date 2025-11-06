@@ -1,0 +1,18 @@
+---
+- name: Check if Sliver exists
+  stat:
+    path: /usr/local/bin/sliver
+  register: sliver_stat
+
+- name: Set sliver_exists variable
+  set_fact:
+    sliver_exists: "{{ sliver_stat.stat.exists | default(false) }}"
+
+- name: Check if Havoc C2 exists
+  stat:
+    path: /opt/Havoc/client/Havoc
+  register: havoc_stat
+
+- name: Set havoc_exists variable
+  set_fact:
+    havoc_exists: "{{ havoc_stat.stat.exists | default(false) }}"

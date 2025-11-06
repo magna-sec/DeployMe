@@ -1,0 +1,13 @@
+---
+- name: Ensure the snmp.conf file exists
+  file:
+    path: /etc/snmp/snmp.conf
+    state: touch
+    mode: '0644'
+
+- name: Uncomment the mibdirs line in snmp.conf
+  replace:
+    path: /etc/snmp/snmp.conf
+    regexp: '^#(mibdirs /usr/share/snmp/mibs:/usr/share/snmp/mibs/iana:/usr/share/snmp/mibs/ietf)'
+    replace: '\1'
+  become: yes
