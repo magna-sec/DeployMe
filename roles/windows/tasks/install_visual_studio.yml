@@ -1,0 +1,7 @@
+---
+## Need this depeendacy for roadrecon to work... atleast i have
+- name: Install Visual Studio 2022 Build Tools with C++ workload
+  win_shell: |
+    choco install visualstudio2022buildtools --package-parameters "--add Microsoft.VisualStudio.Workload.VCTools --includeRecommended --includeOptional --passive" -y
+  args:
+    creates: "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools"

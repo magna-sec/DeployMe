@@ -1,0 +1,32 @@
+---
+- name: Create C:\Tools directory
+  win_file:
+    path: C:\Tools
+    state: directory
+
+- name: Check if C:\Tools is already excluded from Windows Defender
+  win_shell: |
+    $exclusions = Get-MpPreference | Select-Object -ExpandProperty ExclusionPath
+    if ($exclusions -contains "C:\Tools") {
+      Write-Output "excluded"
+    } else {
+      Write-Output "not_excluded"
+    }
+  register: defender_check
+  changed_when: false
+
+- name: Add C:\Tools to Windows Defender exclusions
+  win_shell: Add-MpPreference -ExclusionPath "C:\Tools"
+  when: defender_check.stdout_lines[0] == "not_excluded"
+  register: defender_exclusion
+
+- name: Verify C:\Tools is excluded from Windows Defender
+  win_shell: |
+    $exclusions = Get-MpPreference | Select-Object -ExpandProperty ExclusionPath
+    Write-Output $exclusions
+  register: exclusion_verify
+  changed_when: false
+
+- name: Display Windows Defender exclusions
+  debug:
+    msg: "Windows Defender exclusions: {{ exclusion_verify.stdout_lines }}"

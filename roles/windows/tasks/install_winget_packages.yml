@@ -1,0 +1,14 @@
+---
+- name: Install packages via winget
+  ansible.windows.win_shell: |
+    $resolveWingetPath = Resolve-Path "C:\Program Files\WindowsApps\Microsoft.DesktopAppInstaller_*_x64__8wekyb3d8bbwe\winget.exe" | Select-Object -First 1
+    & $resolveWingetPath install --id {{ item }} --silent --accept-package-agreements --accept-source-agreements
+  loop: "{{ winget_packages }}"
+  register: winget_result
+  become: yes
+  become_method: runas
+  become_user: SYSTEM
+  failed_when:
+    - winget_result.rc != 0
+    - "'already installed' not in winget_result.stderr | lower"
+  changed_when: "'Successfully installed' in winget_result.stdout"

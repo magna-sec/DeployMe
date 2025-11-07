@@ -1,0 +1,16 @@
+---
+- name: Ensure TODO folder exists
+  ansible.windows.win_file:
+    path: C:\Tools\TODO
+    state: directory
+
+- name: Copy local todo.txt to TODO folder
+  ansible.windows.win_copy:
+    src: todo.txt
+    dest: C:\Tools\TODO\todo.txt
+
+- name: Download files from a list of URLs into TODO folder
+  ansible.windows.win_get_url:
+    url: "{{ item }}"
+    dest: C:\Tools\TODO\
+  loop: "{{ todo_urls }}"

@@ -1,0 +1,21 @@
+---
+- name: Check if roadrecon is already installed
+  win_shell: pip show roadrecon
+  register: roadrecon_check
+  failed_when: false
+  changed_when: false
+
+- name: Install roadrecon via pip
+  win_shell: pip install roadrecon
+  when: roadrecon_check.rc != 0
+  register: roadrecon_install
+
+- name: Verify roadrecon installation
+  win_shell: pip show roadrecon
+  register: roadrecon_version
+  changed_when: false
+
+- name: Display roadrecon version
+  debug:
+    msg: "roadrecon installed: {{ roadrecon_version.stdout_lines[1] }}"
+  when: roadrecon_version.rc == 0

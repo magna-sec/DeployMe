@@ -1,0 +1,3 @@
+0. TURN THE FIREWALL BACK ON
+1. Install PCAP
+2. Copy Tooling from Dev

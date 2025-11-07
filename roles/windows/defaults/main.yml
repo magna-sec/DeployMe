@@ -1,0 +1,25 @@
+---
+chocolatey_packages:
+  - git
+  - googlechrome
+  - 7zip
+  - notepadplusplus
+  - python
+  - putty
+  - wireshark
+  - sysinternals
+  - agentransack
+  - proxifier
+  - azure-cli
+  - AzurePowershell
+  - firefox
+  - everything
+  - dotnet-8.0-sdk-3xx
+  - openvpn-connect
+
+
+winget_packages:
+  - Microsoft.Powershell
+
+todo_urls:
+  - https://npcap.com/dist/npcap-1.84.exe

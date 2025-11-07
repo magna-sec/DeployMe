@@ -1,0 +1,38 @@
+---
+- name: Prompt for Windows password if needed
+  hosts: localhost
+  gather_facts: no
+  vars_prompt:
+    - name: "windows_password"
+      prompt: "Enter Windows password (press Enter to skip if deploying Kali)"
+      private: yes
+  tasks:
+    - name: Store password for later use
+      set_fact:
+        stored_password: "{{ windows_password }}"
+      when: windows_password | length > 0
+
+- name: Deploy to a remote Kali or Windows machine
+  hosts: all
+  gather_facts: yes
+  
+  vars:
+    # Set the password for Windows connections
+    ansible_password: "{{ hostvars['localhost']['stored_password'] | default(omit) }}"
+    ansible_winrm_server_cert_validation: ignore
+  
+  tasks:
+    - name: Deploy Kali machine
+      ansible.builtin.include_role:
+        name: kali
+      when: machine == "kali"
+    
+    - name: Deploy Windows machine
+      ansible.builtin.include_role:
+        name: windows
+      when: machine == "windows"
+    
+    - name: Fail if no valid machine type specified
+      ansible.builtin.fail:
+        msg: "Invalid machine type. Please specify machine=kali or machine=windows"
+      when: machine not in ["kali", "windows"]

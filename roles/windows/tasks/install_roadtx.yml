@@ -1,0 +1,21 @@
+---
+- name: Check if roadtx is already installed
+  win_shell: pip show roadtx
+  register: roadtx_check
+  failed_when: false
+  changed_when: false
+
+- name: Install roadtx via pip
+  win_shell: pip install roadtx
+  when: roadtx_check.rc != 0
+  register: roadtx_install
+
+- name: Verify roadtx installation
+  win_shell: pip show roadtx
+  register: roadtx_version
+  changed_when: false
+
+- name: Display roadtx version
+  debug:
+    msg: "roadtx installed: {{ roadtx_version.stdout_lines[1] }}"
+  when: roadtx_version.rc == 0

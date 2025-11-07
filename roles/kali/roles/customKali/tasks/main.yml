@@ -1,15 +1,8 @@
 # Installations
-- include_tasks: checks.yml
 - include_tasks: installs.yml
-
-#- include_tasks: sliver.yml
-#  when: not sliver_exists
 
 # Fix terminal
 - include_tasks: terminal.yml
-
-# Wallpaper
-- include_tasks: wallpaper.yml
 
 # Folders
 - include_tasks: folders.yml

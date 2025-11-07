@@ -1,0 +1,16 @@
+---
+- name: Add Titanis tool directories to system PATH
+  ansible.windows.win_path:
+    elements: "C:\\Tools\\Titanis\\artifacts\\tools\\bin\\{{ item }}\\release"
+    scope: machine
+    state: present
+  loop:
+    - CredCoerce
+    - Epm
+    - Kerb
+    - Lsa
+    - Sam
+    - Scm
+    - Smb2Client
+    - Wmi
+  register: path_result
