@@ -4,6 +4,7 @@
     path: /etc/snmp/snmp.conf
     state: touch
     mode: '0644'
+  become: yes
 
 - name: Uncomment the mibdirs line in snmp.conf
   replace:

@@ -7,9 +7,7 @@ ansible-playbook deploy.yml -i "192.168.6.153," -e "ansible_user=ansible ansible
 
 ### Docker Ansible
 Kali:
-docker run --rm -it -v "$(pwd)":/ansible -w /ansible willhallonline/ansible:latest \
-  sh -c 'ansible-playbook deploy.yml -i "192.168.1.100," -e "ansible_user=kali ansible_connection=ssh machine=kali"'
-
+docker run --rm -it -v "$(pwd)":/ansible -w /ansible willhallonline/ansible:latest   sh -c 'ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook deploy.yml -i "192.168.6.158," -e "ansible_user=ansible ansible_connection=ssh machine=kali"'
 
 Windows:
 docker run --rm -it -v "$(pwd)":/ansible -w /ansible willhallonline/ansible:latest \

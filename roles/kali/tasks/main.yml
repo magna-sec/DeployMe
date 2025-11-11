@@ -26,6 +26,11 @@
       dir: "{{ Tools_Linux }}"
   loop: "{{ LinuxToolsGit }}"
 
+- include_tasks: git.yml
+  vars:
+    dir: "{{ Tools_Generic }}"
+  loop: "{{ GenericToolsGit }}"
+
 ############# Downloads
 - include_tasks: download.yml
   vars:
@@ -48,5 +53,7 @@
 
 - include_tasks: snmp.yml
 - include_tasks: fix_metasploit.yml
+- include_tasks: tailscale.yml
 
 - include_tasks: cleanup.yml
+- include_tasks: reboot.yml

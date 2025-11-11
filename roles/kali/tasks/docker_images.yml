@@ -3,3 +3,4 @@
   community.docker.docker_image:
     name: "{{ item }}"
     source: pull
+  become: yes

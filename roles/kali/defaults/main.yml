@@ -12,7 +12,7 @@ Terminal_Settings: /etc/xdg/qterminal.org/qterminal.ini
 InitialPackages:
 - remmina
 - ltrace
-- tilix
+  # - tilix They keep removing it....ffs
 - strace
 - hexedit
 - php-cli
@@ -38,7 +38,6 @@ InitialPackages:
 - netexec
 - docker.io
 - bloodyad
-- tailscale
 
 PipInstalls:
  - pyftpdlib
@@ -89,6 +88,7 @@ WindowsToolsGit:
 - https://github.com/Thunter-HackTeam/EvilentCoerce
 - https://github.com/SecuraBV/Timeroast
 - https://github.com/micahvandeusen/gMSADumper
+- https://github.com/garrettfoster13/mssqlkaren
 
 GenericToolsGit:
 - https://github.com/arthaud/git-dumper
