@@ -56,4 +56,4 @@
 - include_tasks: tailscale.yml
 
 - include_tasks: cleanup.yml
-- include_tasks: reboot.yml
+  #- include_tasks: reboot.yml

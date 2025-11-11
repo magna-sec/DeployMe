@@ -55,6 +55,7 @@ PipInstalls:
  - dploot
  - git+https://github.com/p0dalirius/smbclient-ng
  - git+https://github.com/ly4k/Certipy
+ - impacket
 
 DockerImages:
  - woahbase/alpine-python2

@@ -30,7 +30,6 @@
   community.general.pipx:
     name: "{{ item }}"
   with_items: "{{ PipInstalls }}"
-  become: true
 
 # Install pipx packages
 - name: Ensure directory where pipx stores apps is in your PATH environment variable.
