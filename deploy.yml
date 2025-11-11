@@ -4,7 +4,7 @@
   gather_facts: no
   vars_prompt:
     - name: "windows_password"
-      prompt: "Enter Windows password (press Enter to skip if deploying Kali)"
+      prompt: "Enter Password:"
       private: yes
   tasks:
     - name: Store password for later use
