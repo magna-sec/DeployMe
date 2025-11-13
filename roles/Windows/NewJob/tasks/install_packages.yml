@@ -1,0 +1,7 @@
+---
+- name: Install packages via Chocolatey
+  win_chocolatey:
+    name: "{{ item }}"
+    state: present
+  loop: "{{ chocolatey_packages }}"
+  when: chocolatey_packages is defined and chocolatey_packages | length > 0

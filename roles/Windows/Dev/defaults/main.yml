@@ -1,0 +1,57 @@
+---
+chocolatey_packages:
+  - git
+  - 7zip
+  - notepadplusplus
+  - python
+  - wireshark
+  - sysinternals
+  - everything
+  - dotnet
+  - dotnetcore-sdk
+  - dotnet-8.0-sdk-3xx
+  - visualstudio2022community
+  - visualstudio2019community
+  - visualstudio2017community
+  - ida-free
+  - ilspy
+  - dnspy
+  - ghidra
+  - radare2
+  - explorersuite
+  - pebear
+  - apimonitor
+  - windows-sdk-10-version-2004-windbg
+  - windows-sdk-10-version-1809-windbg
+  - visualstudio2022-workload-manageddesktop
+  - visualstudio2019-workload-manageddesktop
+  - visualstudio2017-workload-manageddesktop
+
+
+git_tools:
+  - https://github.com/GhostPack/Rubeus
+  - https://github.com/antonioCoco/RunasCs
+  - https://github.com/trustedsec/Titanis
+  - https://github.com/rasta-mouse/ThreatCheck
+  - https://github.com/GhostPack/SharpWMI
+  - https://github.com/tevora-threat/SharpView
+  - https://github.com/GhostPack/SharpUp
+  - https://github.com/Mayyhem/SharpSCCM
+  - https://github.com/GhostPack/SharpDump
+  - https://github.com/GhostPack/SharpDPAPI
+  - https://github.com/GhostPack/Seatbelt
+  - https://github.com/antonioCoco/RoguePotato
+  - https://github.com/ricardojoserf/NativeDump
+  - https://github.com/fortra/nanodump
+  - https://github.com/gentilkiwi/mimikatz
+  - https://github.com/ohpe/juicy-potato
+  - https://github.com/BeichenDream/GodPotato
+  - https://github.com/GhostPack/Certify
+  - https://github.com/itm4n/FullPowers
+
+winget_packages:
+  - Microsoft.Powershell
+
+todo_urls:
+  - https://npcap.com/dist/npcap-1.84.exe
+  - https://download.microsoft.com/download/A/A/D/AAD1AA11-FF9A-4B3C-8601-054E89260B78/vs_community.exe

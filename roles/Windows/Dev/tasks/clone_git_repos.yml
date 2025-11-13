@@ -1,0 +1,13 @@
+---
+- name: Ensure C:\Tooling\gits directory exists
+  ansible.windows.win_file:
+    path: C:\Tooling\gits
+    state: directory
+
+- name: Clone git repositories
+  ansible.windows.win_shell: |
+    git clone {{ item }} C:\Tooling\gits\{{ item | regex_replace('.*/', '') | regex_replace('\.git$', '') }}
+  args:
+    creates: C:\Tooling\gits\{{ item | regex_replace('.*/', '') | regex_replace('\.git$', '') }}
+  loop: "{{ git_tools }}"
+  when: git_tools is defined and git_tools | length > 0

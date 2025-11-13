@@ -3,6 +3,9 @@
 
 
 net user ansible Passw0rd! /add
+
+$Password = Read-Host "Ansible Password" -AsSecureString
+New-LocalUser -Name "ansible" -Password $Password
 net localgroup administrators ansible /add
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 $url = "https://raw.githubusercontent.com/ansible/ansible-documentation/refs/heads/devel/examples/scripts/ConfigureRemotingForAnsible.ps1"

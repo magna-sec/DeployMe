@@ -1,0 +1,14 @@
+---
+- name: Ensure App Installer (winget) is installed system-wide
+  ansible.windows.win_powershell:
+    script: |
+      $appInstaller = Get-AppxPackage -AllUsers -Name Microsoft.DesktopAppInstaller -ErrorAction SilentlyContinue
+      if (-not $appInstaller) {
+        Write-Host "Installing App Installer..."
+        Invoke-WebRequest https://aka.ms/getwinget -OutFile $env:TEMP\winget.msixbundle
+        Add-AppxProvisionedPackage -Online -PackagePath $env:TEMP\winget.msixbundle -SkipLicense
+      } else {
+        Write-Host "App Installer already installed."
+      }
+  register: appinstaller_result
+  changed_when: "'Installing App Installer' in appinstaller_result.host_out"
