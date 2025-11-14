@@ -10,34 +10,35 @@ Lists: /home/{{ ansible_user }}/Lists/
 Terminal_Settings: /etc/xdg/qterminal.org/qterminal.ini
 
 InitialPackages:
-- remmina
-- ltrace
-  # - tilix They keep removing it....ffs
-- strace
-- hexedit
-- php-cli
-- jq
-- npm
-- ntpsec-ntpdate
-- isc-dhcp-client
-- rdate
-- gobuster
-- freerdp3-dev
-- coercer
-- gdb
-- msitools
-- mssqlpwner
-- jd-gui
-- bloodhound
-- sliver
-- snmp-mibs-downloader
-- mono-devel
-- pipx
-- awscli
-- ligolo-ng
-- netexec
-- docker.io
-- bloodyad
+ - remmina
+ - ltrace
+   # - tilix They keep removing it....ffs
+ - strace
+ - hexedit
+ - php-cli
+ - jq
+ - npm
+ - ntpsec-ntpdate
+ - isc-dhcp-client
+ - rdate
+ - gobuster
+ - freerdp3-dev
+ - coercer
+ - gdb
+ - msitools
+ - mssqlpwner
+ - jd-gui
+ - bloodhound
+ - sliver
+ - snmp-mibs-downloader
+ - mono-devel
+ - pipx
+ - awscli
+ - ligolo-ng
+ - netexec
+ - docker.io
+ - bloodyad
+ - bat
 
 PipInstalls:
  - pyftpdlib
