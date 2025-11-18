@@ -39,6 +39,7 @@ InitialPackages:
  - docker.io
  - bloodyad
  - bat
+ - ghidra
 
 PipInstalls:
  - pyftpdlib
