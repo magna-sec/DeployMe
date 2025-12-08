@@ -18,6 +18,8 @@ InitialPackages:
  - php-cli
  - jq
  - npm
+ - mongodb-clients
+ - mongo-tools
  - ntpsec-ntpdate
  - isc-dhcp-client
  - dirsearch
