@@ -20,6 +20,7 @@ InitialPackages:
  - npm
  - ntpsec-ntpdate
  - isc-dhcp-client
+ - dirsearch
  - rdate
  - gobuster
  - freerdp3-dev
