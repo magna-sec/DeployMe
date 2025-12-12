@@ -62,6 +62,7 @@ PipInstalls:
  - git+https://github.com/ly4k/Certipy
  - impacket
  - git+https://github.com/adityatelange/evil-winrm-py[kerberos] --force --include-deps
+ - git+https://github.com/usdAG/slipit
 
 DockerImages:
  - woahbase/alpine-python2
