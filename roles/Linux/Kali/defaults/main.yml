@@ -61,8 +61,8 @@ PipInstalls:
  - git+https://github.com/p0dalirius/smbclient-ng
  - git+https://github.com/ly4k/Certipy
  - impacket
- - git+https://github.com/adityatelange/evil-winrm-py[kerberos] --force --include-deps
  - git+https://github.com/usdAG/slipit
+ - git+https://github.com/xnl-h4ck3r/xnLinkFinder
 
 DockerImages:
  - woahbase/alpine-python2
