@@ -16,6 +16,7 @@ chocolatey_packages:
   - everything
   - dotnet-8.0-sdk-3xx
   - openvpn-connect
+  - tailscale
 
 
 winget_packages:
