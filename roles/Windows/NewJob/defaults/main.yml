@@ -17,6 +17,7 @@ chocolatey_packages:
   - dotnet-8.0-sdk-3xx
   - openvpn-connect
   - tailscale
+  - sqlitebrowser.install
 
 
 winget_packages:
