@@ -63,6 +63,7 @@ PipInstalls:
  - impacket
  - git+https://github.com/usdAG/slipit
  - git+https://github.com/xnl-h4ck3r/xnLinkFinder
+ - git+https://github.com/arthaud/git-dumper
 
 DockerImages:
  - woahbase/alpine-python2
@@ -100,7 +101,6 @@ WindowsToolsGit:
 - https://github.com/garrettfoster13/mssqlkaren
 
 GenericToolsGit:
-- https://github.com/arthaud/git-dumper
 - https://github.com/unode/firefox_decrypt
 - https://github.com/musana/CF-Hero
 - https://github.com/iphelix/dnschef
