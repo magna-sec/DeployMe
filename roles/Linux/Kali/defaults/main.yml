@@ -64,6 +64,7 @@ PipInstalls:
  - git+https://github.com/usdAG/slipit
  - git+https://github.com/xnl-h4ck3r/xnLinkFinder
  - git+https://github.com/arthaud/git-dumper
+ - extract-msg
 
 DockerImages:
  - woahbase/alpine-python2
