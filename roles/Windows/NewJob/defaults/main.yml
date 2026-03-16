@@ -1,7 +1,6 @@
 ---
 chocolatey_packages:
   - git
-  - googlechrome
   - 7zip
   - notepadplusplus
   - python
@@ -18,7 +17,6 @@ chocolatey_packages:
   - openvpn-connect
   - tailscale
   - sqlitebrowser.install
-
 
 winget_packages:
   - Microsoft.Powershell

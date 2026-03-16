@@ -5,11 +5,28 @@
   failed_when: false
   changed_when: false
 
-- name: Install Chocolatey
+- name: Ensure C:\tools exists
+  win_file:
+    path: C:\tools
+    state: directory
+
+- name: Download Chocolatey install script to excluded path
+  win_get_url:
+    url: https://community.chocolatey.org/install.ps1
+    dest: C:\tools\choco_install.ps1
+  when: choco_check.rc != 0
+
+- name: Install Chocolatey from excluded path
   win_shell: |
     Set-ExecutionPolicy Bypass -Scope Process -Force
     [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072
-    iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+    C:\tools\choco_install.ps1
+  when: choco_check.rc != 0
+
+- name: Clean up install script
+  win_file:
+    path: C:\tools\choco_install.ps1
+    state: absent
   when: choco_check.rc != 0
 
 - name: Verify Chocolatey installation

@@ -11,4 +11,4 @@ docker run --rm -it -v "$(pwd)":/ansible -w /ansible willhallonline/ansible:late
 
 Windows:
 docker run --rm -it -v "$(pwd)":/ansible -w /ansible willhallonline/ansible:latest \
-  sh -c 'ansible-playbook deploy.yml -i "192.168.6.153," -e "ansible_user=ansible ansible_connection=winrm ansible_winrm_transport=ntlm ansible_port=5985 machine=windows"'
+  sh -c 'ansible-playbook deploy.yml -i "192.168.6.171," -e "ansible_user=ansible ansible_connection=winrm ansible_winrm_transport=ntlm ansible_port=5985 machine=Windows"'
