@@ -39,6 +39,7 @@ InitialPackages:
  - snmp-mibs-downloader
  - mono-devel
  - pipx
+ - ansible
  - awscli
  - ligolo-ng
  - netexec
