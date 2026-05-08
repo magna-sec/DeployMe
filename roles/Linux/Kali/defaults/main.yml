@@ -13,6 +13,7 @@ InitialPackages:
 
 - remmina
 - ltrace
+- open-vm-tools-desktop fuse
   # - tilix They keep removing it....ffs
 - ghostty
 - tailscale
