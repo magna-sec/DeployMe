@@ -1,6 +1,5 @@
 ---
-- name: Updating locate database
-  shell: |
-    updatedb
+- name: Update locate database
   become: true
-
+  ansible.builtin.command:
+    cmd: updatedb

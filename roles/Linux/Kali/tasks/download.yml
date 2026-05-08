@@ -1,6 +1,5 @@
-
 ---
 - name: Downloading {{ item.split('/') | last }}
-  get_url:
+  ansible.builtin.get_url:
     url: "{{ item }}"
     dest: "{{ dir }}/{{ item.split('/')[-1] }}"

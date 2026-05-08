@@ -1,22 +1,20 @@
 ---
 
-Tools: /home/{{ ansible_user }}/Tools/
+ghostty_font_size: 15
+
+Tools: /home/{{ ansible_user }}/Tools
 Tools_Windows: /home/{{ ansible_user }}/Tools/Windows
 Tools_Linux: /home/{{ ansible_user }}/Tools/Linux
 Tools_Generic: /home/{{ ansible_user }}/Tools/Generic
 
-Lists: /home/{{ ansible_user }}/Lists/
-
-Terminal_Settings: /etc/xdg/qterminal.org/qterminal.ini
+Lists: /home/{{ ansible_user }}/Lists
 
 InitialPackages:
 
 - remmina
 - ltrace
-- open-vm-tools-desktop fuse
-  # - tilix They keep removing it....ffs
-- ghostty
-- tailscale
+- open-vm-tools-desktop
+- fuse
 - strace
 - hexedit
 - php-cli
@@ -54,11 +52,9 @@ InitialPackages:
 - libhivex-bin
 - libwin-hivex-perl
 - trufflehog
-- sl
 - neo4j
 - azurehound
 - sharphound
-- favscan
 - dislocker
 - winregfs
 
@@ -133,11 +129,6 @@ GenericToolsGit:
 - https://github.com/bitquark/shortscan
 - https://github.com/assetnote/react2shell-scanner
 
-ListsGit:
-- https://github.com/danielmiessler/SecLists
-- https://github.com/insidetrust/statistically-likely-usernames
-
-
 ############# Downloads
 LinuxToolsDownloads:
 - https://github.com/carlospolop/PEASS-ng/releases/latest/download/linpeas.sh
@@ -151,9 +142,6 @@ WindowsToolsDownloads:
 - https://raw.githubusercontent.com/samratashok/nishang/master/Shells/Invoke-PowerShellTcp.ps1
 - https://github.com/itm4n/PrintSpoofer/releases/download/v1.0/PrintSpoofer32.exe
 - https://github.com/itm4n/PrintSpoofer/releases/download/v1.0/PrintSpoofer64.exe
-
-ListDownloads:
-- 
 
 ############# Compressed
 WindowsToolsCompressed:

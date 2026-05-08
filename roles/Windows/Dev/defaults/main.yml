@@ -30,6 +30,9 @@ chocolatey_packages:
   - visualstudio2022-workload-manageddesktop
   - visualstudio2019-workload-manageddesktop
   - visualstudio2017-workload-manageddesktop
+  - tailscale
+  - sqlitebrowser.install
+  - proxifier
 
 
 git_tools:

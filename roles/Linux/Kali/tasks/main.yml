@@ -1,59 +1,53 @@
-# Installations
-- include_tasks: installs.yml
+---
+- ansible.builtin.include_tasks: installs.yml
+- ansible.builtin.include_tasks: ghostty.yml
+- ansible.builtin.include_tasks: terminal.yml
+- ansible.builtin.include_tasks: folders.yml
 
-# Fix terminal
-- include_tasks: terminal.yml
-
-# Folders
-- include_tasks: folders.yml
-
-# Lists
-############# Gits
-- include_tasks: git.yml
+############# Lists
+- ansible.builtin.include_tasks: git.yml
   vars:
     dir: "{{ Lists }}"
   loop: "{{ ListsGit }}"
 
-# Tooling
-############# Gits
-- include_tasks: git.yml
+############# Tooling - Git
+- ansible.builtin.include_tasks: git.yml
   vars:
-      dir: "{{ Tools_Windows }}"
+    dir: "{{ Tools_Windows }}"
   loop: "{{ WindowsToolsGit }}"
 
-- include_tasks: git.yml
+- ansible.builtin.include_tasks: git.yml
   vars:
-      dir: "{{ Tools_Linux }}"
+    dir: "{{ Tools_Linux }}"
   loop: "{{ LinuxToolsGit }}"
 
-- include_tasks: git.yml
+- ansible.builtin.include_tasks: git.yml
   vars:
     dir: "{{ Tools_Generic }}"
   loop: "{{ GenericToolsGit }}"
 
-############# Downloads
-- include_tasks: download.yml
+############# Tooling - Downloads
+- ansible.builtin.include_tasks: download.yml
   vars:
-      dir: "{{ Tools_Windows }}"
+    dir: "{{ Tools_Windows }}"
   loop: "{{ WindowsToolsDownloads }}"
 
-- include_tasks: download.yml
+- ansible.builtin.include_tasks: download.yml
   vars:
-      dir: "{{ Tools_Linux }}"
+    dir: "{{ Tools_Linux }}"
   loop: "{{ LinuxToolsDownloads }}"
 
-############# Compressed
-- include_tasks: compressed.yml
+############# Tooling - Compressed
+- ansible.builtin.include_tasks: compressed.yml
   vars:
-      dir: "{{ Tools_Windows }}"
+    dir: "{{ Tools_Windows }}"
   loop: "{{ WindowsToolsCompressed }}"
 
-- include_tasks: docker_images.yml
+- ansible.builtin.include_tasks: docker_images.yml
   loop: "{{ DockerImages }}"
 
-- include_tasks: snmp.yml
-- include_tasks: fix_metasploit.yml
-- include_tasks: tailscale.yml
-
-- include_tasks: cleanup.yml
-  #- include_tasks: reboot.yml
+- ansible.builtin.include_tasks: snmp.yml
+- ansible.builtin.include_tasks: fix_metasploit.yml
+- ansible.builtin.include_tasks: tailscale.yml
+- ansible.builtin.include_tasks: cleanup.yml
+# - ansible.builtin.include_tasks: reboot.yml

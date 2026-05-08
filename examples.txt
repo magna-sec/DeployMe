@@ -1,14 +1,8 @@
-#### Native Ansible
-Kali:
-ansible-playbook deploy.yml -i "192.168.1.100," -e "ansible_user=kali ansible_connection=ssh machine=kali"
+#### Kali
+ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook deploy.yml -i "192.168.1.100," -e "ansible_user=<USER> ansible_connection=ssh machine=Kali" --ask-pass --ask-become-pass
 
-Windows:
-ansible-playbook deploy.yml -i "192.168.6.153," -e "ansible_user=ansible ansible_connection=winrm ansible_winrm_transport=ntlm ansible_port=5985 machine=windows"
+#### Windows
+ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook deploy.yml -i "192.168.6.153," -e "ansible_user=<USER> ansible_connection=winrm ansible_winrm_transport=ntlm ansible_port=5985 machine=Windows"
 
-### Docker Ansible
-Kali:
-docker run --rm -it -v "$(pwd)":/ansible -w /ansible willhallonline/ansible:latest   sh -c 'ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook deploy.yml -i "192.168.6.158," -e "ansible_user=ansible ansible_connection=ssh machine=kali"'
-
-Windows:
-docker run --rm -it -v "$(pwd)":/ansible -w /ansible willhallonline/ansible:latest \
-  sh -c 'ansible-playbook deploy.yml -i "192.168.6.171," -e "ansible_user=ansible ansible_connection=winrm ansible_winrm_transport=ntlm ansible_port=5985 machine=Windows"'
+#### WindowsDev
+ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook deploy.yml -i "192.168.6.153," -e "ansible_user=<USER> ansible_connection=winrm ansible_winrm_transport=ntlm ansible_port=5985 machine=WindowsDev"
