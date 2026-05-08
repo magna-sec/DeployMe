@@ -42,7 +42,6 @@ InitialPackages:
 - ansible
 - awscli
 - ligolo-ng
-- netexec
 - docker.io
 - bloodyad
 - bat
@@ -83,6 +82,7 @@ PipInstalls:
  - git+https://github.com/xnl-h4ck3r/xnLinkFinder
  - git+https://github.com/arthaud/git-dumper
  - extract-msg
+ - git+https://github.com/Pennyw0rth/NetExec
 
 DockerImages:
  - woahbase/alpine-python2
