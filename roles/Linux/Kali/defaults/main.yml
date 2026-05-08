@@ -117,6 +117,10 @@ WindowsToolsGit:
 - https://github.com/SecuraBV/Timeroast
 - https://github.com/micahvandeusen/gMSADumper
 - https://github.com/garrettfoster13/mssqlkaren
+- https://github.com/SpecterOps/MSSQLHound
+- https://github.com/AlmondOffSec/PassTheCert
+- https://github.com/topotam/PetitPotam
+- https://github.com/zyn3rgy/smbtakeover
 
 GenericToolsGit:
 - https://github.com/unode/firefox_decrypt
@@ -124,6 +128,8 @@ GenericToolsGit:
 - https://github.com/iphelix/dnschef
 - https://github.com/jenish-sojitra/JSAnalyzer
 - https://github.com/CiscoCXSecurity/udp-proto-scanner
+- https://github.com/bitquark/shortscan
+- https://github.com/assetnote/react2shell-scanner
 
 ListsGit:
 - https://github.com/danielmiessler/SecLists
