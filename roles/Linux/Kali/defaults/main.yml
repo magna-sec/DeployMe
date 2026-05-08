@@ -10,9 +10,12 @@ Lists: /home/{{ ansible_user }}/Lists/
 Terminal_Settings: /etc/xdg/qterminal.org/qterminal.ini
 
 InitialPackages:
- - remmina
+
+- remmina
  - ltrace
    # - tilix They keep removing it....ffs
+ - ghostty
+ - tailscale
  - strace
  - hexedit
  - php-cli
@@ -43,6 +46,20 @@ InitialPackages:
  - bloodyad
  - bat
  - ghidra
+ - jadx
+ - evolution
+ - pst-utils
+ - mtx
+ - libhivex-bin
+ - libwin-hivex-perl
+ - trufflehog
+ - sl
+ - neo4j
+ - azurehound
+ - sharphound
+ - favscan
+ - dislocker
+ - winregfs
 
 PipInstalls:
  - pyftpdlib
