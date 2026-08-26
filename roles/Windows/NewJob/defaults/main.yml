@@ -17,6 +17,10 @@ chocolatey_packages:
   - openvpn-connect
   - tailscale
   - sqlitebrowser.install
+  - ghidra
+  - x64dbg.portable
+  - ollydbg
+  - explorersuite
 
 winget_packages:
   - Microsoft.Powershell
